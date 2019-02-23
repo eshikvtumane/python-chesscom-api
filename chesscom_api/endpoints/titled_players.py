@@ -18,7 +18,7 @@ class TitledList(Enum):
     National_Master = 'NM'
     Women_National_Master = 'WNM'
     Candidate_Master = 'CM'
-    Woman_CandidateMaster = 'WCM'
+    Woman_Candidate_Master = 'WCM'
 
 
 class TitledPlayersEndpoint(BaseEndpoint):
