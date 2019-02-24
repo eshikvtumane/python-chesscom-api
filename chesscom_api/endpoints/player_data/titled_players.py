@@ -23,8 +23,8 @@ class TitledList(Enum):
 
 class TitledPlayersEndpoint(BaseEndpoint):
     def __init__(self):
-        endpoint_name = 'titled'
-        super(TitledPlayersEndpoint, self).__init__(endpoint_name)
+        super(TitledPlayersEndpoint, self).__init__()
+        self.endpoint_path = 'titled/%s'
 
     def get_data(self, title):
         """
@@ -33,7 +33,7 @@ class TitledPlayersEndpoint(BaseEndpoint):
         :return: list
         """
         self.valid(title)
-        self.get_url(title.value)
+        self.endpoint_path_with_params = self.endpoint_path % title.value
         return super(TitledPlayersEndpoint, self).get_data()
 
     def valid(self, title):

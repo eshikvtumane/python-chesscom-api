@@ -8,15 +8,16 @@ elif six.PY3:
 
 
 class BaseEndpoint(object):
-    def __init__(self, endpoint_name):
+    def __init__(self):
         self.url = 'https://api.chess.com/pub/'
-        self.endpoint_name = endpoint_name
+        self.endpoint_path = None
+        self.endpoint_path_with_params = None
         self.final_url = None
 
-    def get_url(self, parameters=''):
-        self.final_url = urljoin(self.url, self.endpoint_name)
-        self.final_url = '%s/%s/' % (self.final_url, parameters)
+    def get_url(self):
+        self.final_url = urljoin(self.url, self.endpoint_path_with_params)
 
     def get_data(self):
+        self.get_url()
         response = requests.get(self.final_url)
         return response.json()

@@ -6,3 +6,4 @@ class PlayerDataEndpoints(object):
     def __init__(self):
         self.player = PlayerEndpoint()
         self.titled_players = TitledPlayersEndpoint()
+
