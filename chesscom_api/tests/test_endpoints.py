@@ -1,7 +1,7 @@
 import unittest
 
 from chesscom_api.api import ChessComApi
-from chesscom_api.endpoints.titled_players import TitledList
+from chesscom_api.endpoints.player_data.titled_players import TitledList
 
 
 class BaseTestCase(unittest.TestCase):
