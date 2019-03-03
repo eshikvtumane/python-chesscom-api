@@ -141,5 +141,14 @@ class PlayerMultiGamePngEndpointTestCase(BaseTestCase):
         self.assertTrue('[Event' in result)
 
 
+class PlayerListOfClubsEndpointTestCase(BaseTestCase):
+    def test_get_player_list_of_clubs_success(self):
+        result = self.chess_com_api.player_data_endpoints.participation.list_of_clubs.get_data(
+            username=self.player_name)
+
+        self.assertTrue('clubs' in result)
+        self.assertIsInstance(result['clubs'], list)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -12,3 +12,4 @@ class PlayerGamesEndpoints(object):
         self.list_of_monthly_archive = PlayerListOfMonthlyArchivesEndpoint()
         self.complete_monthly_archive = PlayerCompleteMonthlyArchivesEndpoint()
         self.multi_game_png = PlayerMultiGamePngMonthlyEndpoint()
+

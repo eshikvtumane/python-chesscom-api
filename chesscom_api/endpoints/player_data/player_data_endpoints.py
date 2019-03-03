@@ -1,3 +1,4 @@
+from chesscom_api.endpoints.player_data.participation.participation_endpoints import ParticipationEndpoints
 from chesscom_api.endpoints.player_data.player import PlayerEndpoint
 from chesscom_api.endpoints.player_data.player_games_endpoints import PlayerGamesEndpoints
 from chesscom_api.endpoints.player_data.player_online_status import PlayerOnlineStatusEndpoint
@@ -13,4 +14,6 @@ class PlayerDataEndpoints(object):
         self.player_online_status = PlayerOnlineStatusEndpoint()
 
         self.player_games_endpoints = PlayerGamesEndpoints()
+
+        self.participation = ParticipationEndpoints()
 
