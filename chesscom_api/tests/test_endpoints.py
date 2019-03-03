@@ -131,5 +131,15 @@ class PlayerCompleteMonthlyArchivesEndpointTestCase(BaseTestCase):
         self.assertTrue('games' in result)
         self.assertIsInstance(result['games'], list)
 
+
+class PlayerMultiGamePngEndpointTestCase(BaseTestCase):
+    def test_get_player_multi_game_png_success(self):
+        result = self.chess_com_api.player_data_endpoints.player_games_endpoints.multi_game_png.get_data(
+            username=self.player_name, year=2009, month=4)
+
+        self.assertIsInstance(result, str)
+        self.assertTrue('[Event' in result)
+
+
 if __name__ == '__main__':
     unittest.main()
