@@ -82,5 +82,22 @@ class PlayerStatsEndpointTestCase(BaseTestCase):
         self.assertEqual(len(result), 5)
 
 
+class PlayerOnlineStatusEndpointTestCase(BaseTestCase):
+    def test_get_player_online_status_success(self):
+        result = self.chess_com_api.player_data_endpoints.player_online_status.get_data(username=self.player_name)
+
+        self.assertTrue('online' in result)
+        self.assertIsInstance(result['online'], bool)
+
+
+class PlayerCurrentDailyGamesEndpointTestCase(BaseTestCase):
+    def test_get_player_current_daily_games_success(self):
+        result = self.chess_com_api.player_data_endpoints.player_games_endpoints.current_daily_chess.get_data(
+            username=self.player_name)
+
+        self.assertTrue('games' in result)
+        self.assertIsInstance(result['games'], list)
+
+
 if __name__ == '__main__':
     unittest.main()
