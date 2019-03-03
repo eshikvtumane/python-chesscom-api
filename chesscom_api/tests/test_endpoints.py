@@ -70,5 +70,17 @@ class TitledPlayersEndpointTestCase(BaseTestCase):
             self.chess_com_api.get_titled_players(title=self.player_name)
 
 
+class PlayerStatsEndpointTestCase(BaseTestCase):
+    def test_get_player_stats_success(self):
+        result = self.chess_com_api.player_data_endpoints.player_stats.get_data(username=self.player_name)
+
+        self.assertTrue('chess960_daily' in result)
+        self.assertTrue('chess_blitz' in result)
+        self.assertTrue('chess_bullet' in result)
+        self.assertTrue('chess_daily' in result)
+        self.assertTrue('chess_rapid' in result)
+        self.assertEqual(len(result), 5)
+
+
 if __name__ == '__main__':
     unittest.main()
