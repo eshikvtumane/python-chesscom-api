@@ -1,11 +1,11 @@
 from chesscom_api.endpoints.base_endpoint import BaseEndpoint
 
 
-class PlayerMonthlyArchivesEndpoint(BaseEndpoint):
+class PlayerListOfMonthlyArchivesEndpoint(BaseEndpoint):
     def __init__(self):
         self.endpoint_name = 'player/%s/games/archives'
-        super(PlayerMonthlyArchivesEndpoint, self).__init__()
+        super(PlayerListOfMonthlyArchivesEndpoint, self).__init__()
 
     def get_data(self, username):
         self.endpoint_path_with_params = self.endpoint_name % username
-        return super(PlayerMonthlyArchivesEndpoint, self).get_data()
+        return super(PlayerListOfMonthlyArchivesEndpoint, self).get_data()
