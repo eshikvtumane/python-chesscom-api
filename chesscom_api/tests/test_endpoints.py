@@ -108,5 +108,14 @@ class PlayerToMoveDailyGamesEndpointTestCase(BaseTestCase):
         self.assertIsInstance(result['games'], list)
 
 
+class PlayerMonthlyArchivesEndpointTestCase(BaseTestCase):
+    def test_get_player_monthly_archives_success(self):
+        result = self.chess_com_api.player_data_endpoints.player_games_endpoints.monthly_archive.get_data(
+            username=self.player_name)
+
+        self.assertTrue('archives' in result)
+        self.assertIsInstance(result['archives'], list)
+
+
 if __name__ == '__main__':
     unittest.main()
